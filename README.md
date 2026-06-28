@@ -1,16 +1,47 @@
-# React + Vite
+# Movie List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for browsing, adding, and deleting movies, built as part of the React List Rendering project. Demonstrates component-based structure, dynamic list rendering, and state management using React hooks.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+-  Displays a list of movies using separate `MovieList` and `MovieItem` components
+-  Add new movies dynamically via a form
+-  Delete movies from the list
+-  Styled with Tailwind CSS
+-  Built with React + Vite for fast development
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
+src/
 
-## Expanding the ESLint configuration
+├── App.jsx # Holds state, renders the form and MovieList
+├── MovieList.jsx  # Maps over the movie array, renders MovieItem for each
+├── MovieItem.jsx   # Displays a single movie and its delete button
+└── index.css  # Tailwind import
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/tuhamaina-blip/movie-list-app.git
+cd movie-list-app
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Then open the local URL shown in your terminal.
+
+## How It Works
+
+- Movies are stored in an array of objects in `App.jsx` using `useState`.
+- `MovieList` receives the array as a prop and uses `.map()` to render a `MovieItem` for each movie.
+- Adding a movie updates state with the new array (`[...movies, newMovie]`); deleting filters it out (`movies.filter(...)`).
+- Each `MovieItem` gets a unique `key` prop, as required when rendering lists in React.
+
+
