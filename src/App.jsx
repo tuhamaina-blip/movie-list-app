@@ -34,7 +34,7 @@ function App() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 px-4">
+    <div className="max-w-md mx-auto mt-10 px-4 bg-gray-50 min-h-screen">
       <h1 className="text-2xl font-bold mb-4">My Movie List</h1>
 
       <form onSubmit={handleAddMovie} className="flex gap-2 mb-5">
